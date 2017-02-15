@@ -1,0 +1,15 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReferenceDataServices/AirportService/SaibotCommonDB" name="SaibotCommonDB-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="SaibotCommonDB.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReferenceDataServices/AirportService/SaibotCommonDB"/>
+    <wsdl:binding name="SaibotCommonDB_ptt-binding" type="saib:SaibotCommonDB_ptt" xmlns:saib="http://xmlns.oracle.com/pcbpel/adapter/db/ReferenceDataServices/AirportService/SaibotCommonDB">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="SaibotCommonDBSelect">
+            <soap:operation soapAction="SaibotCommonDBSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

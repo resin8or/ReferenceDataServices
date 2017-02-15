@@ -1,0 +1,32 @@
+<wsdl:definitions
+     name="SaibotCommonDB"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ReferenceDataServices/AirportService/SaibotCommonDB"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ReferenceDataServices/AirportService/SaibotCommonDB"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaibotCommonDB"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="SaibotCommonDB_plt" >
+    <plt:role name="SaibotCommonDB_role" >
+      <plt:portType name="tns:SaibotCommonDB_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaibotCommonDB" schemaLocation="SaibotCommonDB_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="SaibotCommonDBSelect_inputParameters">
+        <wsdl:part name="SaibotCommonDBSelect_inputParameters" element="top:SaibotCommonDBSelect_pIATACode_pCountryCode_pAirportNameInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="CmnAirportsCollection_msg">
+        <wsdl:part name="CmnAirportsCollection" element="top:CmnAirportsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="SaibotCommonDB_ptt">
+        <wsdl:operation name="SaibotCommonDBSelect">
+            <wsdl:input message="tns:SaibotCommonDBSelect_inputParameters"/>
+            <wsdl:output message="tns:CmnAirportsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

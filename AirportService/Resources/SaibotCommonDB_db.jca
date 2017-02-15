@@ -1,0 +1,14 @@
+<adapter-config name="SaibotCommonDB" adapter="db" wsdlLocation="SaibotCommonDB.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="saibot" location="eis/DB/SaibotCommonDB"/>
+  <endpoint-interaction portType="SaibotCommonDB_ptt" operation="SaibotCommonDBSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="SaibotCommonDB.CmnAirports"/>
+      <property name="QueryName" value="SaibotCommonDBSelect"/>
+      <property name="MappingsMetaDataURL" value="SaibotCommonDB-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
